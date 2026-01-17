@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Slim Test Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 50px;
+        text-align: center;
+      }
+      button {
+        padding: 15px 30px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      div {
+        padding: 15px 30px;
+        margin: 10px auto;
+        font-size: 16px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1>Welcome to My Slim API Test Page</h1>
+
+    <button onclick="goHome()">Go to Home</button>
+    <button onclick="goProducts()">Go to Products</button>
+    <br />
+    <div><canvas id="myChart"></canvas></div>
+    <script>
+      function goHome() {
+        window.location.href = "/hello/User";
+      }
+
+      function goProducts() {
+        window.location.href = "/products";
+      }
+
+      // Access Elements
+      const myPara = document.getElementById("data");
+      const ctx = document.getElementById("myChart");
+      //Fetch data
+      fetch("/api/food")
+        .then((response) => response.json())
+        .then((data) => {
+          // Charts
+          const items = {};
+          data.forEach((item) => {
+            const category = item.category;
+            // Check if the category already exists in the object
+            if (items[category] != undefined) {
+              items[category] = items[category] + 1;
+            } else {
+              items[category] = 1;
+            }
+          });
+          console.log(items);
+          Chart.defaults.color = "black";
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: data["category"],
+              datasets: [
+                {
+                  label: "# of Foods",
+                  data: items,
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  grid: { display: false },
+                },
+                x: {
+                  grid: { display: false },
+                },
+              },
+            },
+          });
+        });
+    </script>
+  </body>
+</html>

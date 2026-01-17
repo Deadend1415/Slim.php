@@ -1,0 +1,62 @@
+[
+  { "food": "Apple", "date": "2026-01-01", "price": 1.2, "category": "Fruit" },
+  { "food": "Banana", "date": "2026-01-02", "price": 0.8, "category": "Fruit" },
+  {
+    "food": "Chicken Breast",
+    "date": "2026-01-03",
+    "price": 5.5,
+    "category": "Meat"
+  },
+  {
+    "food": "Broccoli",
+    "date": "2026-01-04",
+    "price": 2.0,
+    "category": "Vegetable"
+  },
+  { "food": "Rice", "date": "2026-01-05", "price": 1.5, "category": "Grain" },
+  { "food": "Salmon", "date": "2026-01-06", "price": 10.0, "category": "Fish" },
+  { "food": "Eggs", "date": "2026-01-07", "price": 3.0, "category": "Dairy" },
+  { "food": "Milk", "date": "2026-01-08", "price": 1.8, "category": "Dairy" },
+  { "food": "Orange", "date": "2026-01-09", "price": 1.0, "category": "Fruit" },
+  {
+    "food": "Beef Steak",
+    "date": "2026-01-10",
+    "price": 8.5,
+    "category": "Meat"
+  },
+  {
+    "food": "Carrots",
+    "date": "2026-01-11",
+    "price": 1.2,
+    "category": "Vegetable"
+  },
+  { "food": "Pasta", "date": "2026-01-12", "price": 2.5, "category": "Grain" },
+  { "food": "Shrimp", "date": "2026-01-13", "price": 12.0, "category": "Fish" },
+  { "food": "Cheese", "date": "2026-01-14", "price": 4.0, "category": "Dairy" },
+  {
+    "food": "Spinach",
+    "date": "2026-01-15",
+    "price": 1.5,
+    "category": "Vegetable"
+  },
+  { "food": "Yogurt", "date": "2026-01-16", "price": 2.0, "category": "Dairy" },
+  {
+    "food": "Tomato",
+    "date": "2026-01-17",
+    "price": 1.3,
+    "category": "Vegetable"
+  },
+  {
+    "food": "Pork Chop",
+    "date": "2026-01-18",
+    "price": 6.0,
+    "category": "Meat"
+  },
+  {
+    "food": "Blueberries",
+    "date": "2026-01-19",
+    "price": 3.5,
+    "category": "Fruit"
+  },
+  { "food": "Bread", "date": "2026-01-20", "price": 2.0, "category": "Grain" }
+]
