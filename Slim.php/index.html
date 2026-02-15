@@ -44,7 +44,7 @@
       const myPara = document.getElementById("data");
       const ctx = document.getElementById("myChart");
       //Fetch data
-      fetch("/api/food")
+      fetch("http://localhost:8000/api")
         .then((response) => response.json())
         .then((data) => {
           // Charts
