@@ -1,41 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { Bar } from "react-chartjs-2";
-import "chart.js/auto";
-
-const options = {
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-};
+import { PieChart, LineChart } from "./Chart";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [foodJSON, setFoodJSON] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:8000/api")
-      .then((res) => res.json())
-      .then((data) => setFoodJSON(data));
-  }, []);
-
-  console.log(foodJSON);
-
-  const chartData = {
-    labels: "Object.keys(items)",
-    datasets: [
-      {
-        label: "# of Foods",
-        data: "Object.values(items)",
-        borderWidth: 1,
-      },
-    ],
-  };
   return (
     <>
       <div>
@@ -50,8 +20,9 @@ function App() {
         </button>
         <button>Go to Products</button>
         <br />
-        <div>
-          <Bar data={chartData} options={options} />
+        <div className="chartWrapper">
+          <LineChart />
+          <PieChart />
         </div>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
