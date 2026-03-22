@@ -1,6 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import slimLogo from "./assets/pngwing.com.png";
 import "./App.css";
 import { PieChart, LineChart } from "./Chart";
 
@@ -11,8 +12,20 @@ function App() {
       <div>
         <img src={viteLogo} className="logo" alt="Vite logo" />
         <img src={reactLogo} className="logo react" alt="React logo" />
+        <img src={slimLogo} className="logo slim" alt="Slim logo" />
       </div>
-      <h1>Welcome to My Slim.php + React.js Page</h1>
+      <h1>Slim.php + React.js Page</h1>
+      <div className="chartWrapper">
+        <div className="chartBox" style={{ gridArea: "1 / 1 / 2 / 3" }}>
+          <LineChart />
+        </div>
+        <div className="chartBox">
+          <PieChart />
+        </div>
+        <div className="chartBox">
+          <PieChart />
+        </div>
+      </div>
       <div className="card">
         <button>Go to Home</button>
         <button onClick={() => setCount((count) => count + 1)}>
@@ -20,10 +33,6 @@ function App() {
         </button>
         <button>Go to Products</button>
         <br />
-        <div className="chartWrapper">
-          <LineChart />
-          <PieChart />
-        </div>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
